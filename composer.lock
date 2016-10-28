@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b3c9e7f7fa9eba1ef49d85605c4ffda8",
-    "content-hash": "2c7375154d342046ad4b8e85e51d7730",
+    "hash": "ca71c6a7d144d456ca8062b20f7d502f",
+    "content-hash": "ed6b651d396d76b655b1c3787a29fd99",
     "packages": [
         {
             "name": "behat/behat",
@@ -844,6 +844,48 @@
             "time": "2016-10-10 12:19:37"
         },
         {
+            "name": "saintberry/phantomjs-extension",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/saintberry/PhantomJs-Extension.git",
+                "reference": "ed9b4e8a1e5b844bf09aad311897682208183e64"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/saintberry/PhantomJs-Extension/zipball/ed9b4e8a1e5b844bf09aad311897682208183e64",
+                "reference": "ed9b4e8a1e5b844bf09aad311897682208183e64",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/process": ">=2.4"
+            },
+            "require-dev": {
+                "behat/behat": "~3.0",
+                "behat/mink": "~1.5",
+                "behat/mink-extension": "~2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Behat\\PhantomJsExtension": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Berry",
+                    "email": "david.berry@prettygraphic.com.au"
+                }
+            ],
+            "description": "Adds a PhantomJs driver to Behat's Mink extension. This will automatically start and stop PhantomJs in your tests.",
+            "time": "2015-04-25 00:35:53"
+        },
+        {
             "name": "symfony/browser-kit",
             "version": "v2.8.13",
             "source": {
@@ -1463,6 +1505,55 @@
                 "shim"
             ],
             "time": "2016-05-18 14:26:46"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/66de154ae86b1a07001da9fbffd620206e4faf94",
+                "reference": "66de154ae86b1a07001da9fbffd620206e4faf94",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-09-29 14:13:09"
         },
         {
             "name": "symfony/translation",
