@@ -8,7 +8,7 @@ default:
         - Behat\MinkExtension\Context\MinkContext
   extensions:
     Behat\MinkExtension:
-      base_url: http://en.wikipedia.org/
+      base_url: http://vccw.dev/
       sessions:
         default:
           selenium2: # ←↓ここ修正
