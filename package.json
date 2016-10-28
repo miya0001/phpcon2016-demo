@@ -5,8 +5,6 @@
   "main": "index.js",
   "scripts": {
     "init": "/usr/bin/env bash init/init.sh",
-    "run-pahntomjs": "/usr/bin/env bash init/run-phantomjs.sh",
-    "setup": "npm run init && npm run run-pahntomjs",
     "test": "bin/behat"
   },
   "author": "",

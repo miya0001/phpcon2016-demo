@@ -4,7 +4,7 @@
 
 ```
 $ npm install
-$ npm run setup
+$ npm run init
 ```
 
 ## Run Tests
