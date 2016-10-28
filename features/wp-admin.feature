@@ -1,4 +1,4 @@
-Feature: Search
+Feature: WordPress Admin
 
   Scenario: Searching for a page that does exist
 
@@ -14,4 +14,13 @@ Feature: Search
     And I press "wp-submit"
 
     Then I should see "Dashboard"
-    And I should see "Welcome to WordPress!"
+    And I should see "Dashboard"
+
+  Scenario: Go to the plugin page
+    Given I am on "/wp-admin/plugins.php"
+    And I fill in "user_login" with "admin"
+    And I fill in "user_pass" with "admin"
+    And I press "wp-submit"
+
+    Then I should see "Plugins"
+    And I should see "Debug Bar"
