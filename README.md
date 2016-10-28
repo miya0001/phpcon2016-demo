@@ -1,4 +1,4 @@
-# E2E Testing for the WordPress with Behat
+# Behat and PhantomJS based E2E Testing for the WordPress.
 
 ## Getting Started
 
