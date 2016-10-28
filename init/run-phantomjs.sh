@@ -2,7 +2,6 @@
 
 set -ex
 
-
 phantomjs \
     --webdriver=4444 \
     --ignore-ssl-errors=yes \

@@ -7,13 +7,9 @@ default:
         - FeatureContext
         - Behat\MinkExtension\Context\MinkContext
   extensions:
-    Behat\PhantomJsExtension: ~
     Behat\MinkExtension:
-        base_url: http://en.wikipedia.org/
-        javascript_session: phantomjs
-        phantomjs:
-            wd_host: http://localhost:8643/wd/hub
-            wd_port: 8643
-            bin: phantomjs
-            browser: firefox
-            capabilities: ~
+      base_url: http://en.wikipedia.org/
+      sessions:
+        default:
+          selenium2: # ←↓ここ修正
+            wd_host: http://127.0.0.1:4444/wd/hub
