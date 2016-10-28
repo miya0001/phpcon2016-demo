@@ -1,0 +1,15 @@
+{
+  "name": "behat-wordpress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "setup": "/usr/bin/env bash init/init.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "phantomjs": "^2.1.7"
+  }
+}
