@@ -1,15 +1,15 @@
 default:
   suites:
     default:
-      paths: # ←↓ここ修正
+      paths:
         - %paths.base%/features
       contexts: # ←↓ここ修正
         - FeatureContext
         - Behat\MinkExtension\Context\MinkContext
   extensions:
     Behat\MinkExtension:
-      base_url: http://en.wikipedia.org/
+      base_url: http://vccw.dev/
       sessions:
         default:
-          selenium2: # ←↓ここ修正
+          selenium2:
             wd_host: http://127.0.0.1:4444/wd/hub
