@@ -15,3 +15,5 @@ default:
             wd_host: http://localhost:8643/wd/hub
             wd_port: 8643
             bin: phantomjs
+            browser: firefox
+            capabilities: ~
