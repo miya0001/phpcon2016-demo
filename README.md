@@ -6,3 +6,9 @@
 $ npm install
 $ npm run setup
 ```
+
+## Run Tests
+
+```
+$ npm test
+```
