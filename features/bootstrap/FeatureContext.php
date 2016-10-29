@@ -35,6 +35,14 @@ class FeatureContext extends DrupalContext
 	}
 
 	/**
+	 * @When /^I Wait for the page to be loaded$/
+	 */
+	public function waitForThePageToBeLoaded()
+	{
+	    $this->getSession()->wait( 10000, "document.readyState === 'complete'" );
+	}
+
+	/**
 	 * @param int $width The cressn width.
 	 * @param int $width The cressn width.
 	 * @Given /^The screen size is ([0-9]+)x([0-9]+)/
