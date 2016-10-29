@@ -6,8 +6,9 @@
         "behat/mink-browserkit-driver": "*@dev",
         "behat/mink-goutte-driver": "*@dev",
         "behat/mink-selenium2-driver": "*@dev",
-        "saintberry/phantomjs-extension": "^1.0"
+        "drupal/drupal-extension": "*"
     },
+    "minimum-stability": "dev",
     "config": {
         "bin-dir": "bin/"
     }

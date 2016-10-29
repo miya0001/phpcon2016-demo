@@ -6,6 +6,7 @@ Feature: WordPress Admin
 
     Then I should see "Welcome to the VCCW"
 
+  @widescreen
   Scenario: Login into the WordPress as admin
     Given I am on "/wp-admin/"
 
@@ -14,6 +15,19 @@ Feature: WordPress Admin
     And I press "wp-submit"
 
     Then I should see "Dashboard"
+    And I should see "Collapse menu"
+
+  @smartphone
+  @portrait
+  Scenario: Login into the WordPress as admin
+    Given I am on "/wp-admin/"
+
+    When I fill in "user_login" with "admin"
+    And I fill in "user_pass" with "admin"
+    And I press "wp-submit"
+
+    Then I should see "Dashboard"
+    And I should not see "Collapse menu"
 
   Scenario: Go to the plugin page
     Given I am on "/wp-admin/plugins.php"
