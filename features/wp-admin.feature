@@ -14,7 +14,6 @@ Feature: WordPress Admin
     And I press "wp-submit"
 
     Then I should see "Dashboard"
-    And I should see "Dashboard"
 
   Scenario: Go to the plugin page
     Given I am on "/wp-admin/plugins.php"
@@ -24,3 +23,11 @@ Feature: WordPress Admin
 
     Then I should see "Plugins"
     And I should see "Debug Bar"
+
+  Scenario: Go to the plugin page
+    Given I am on "/wp-admin/customize.php"
+    And I fill in "user_login" with "admin"
+    And I fill in "user_pass" with "admin"
+    And I press "wp-submit"
+
+    Then I should see "Site Identity"
