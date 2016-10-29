@@ -33,63 +33,13 @@ class FeatureContext extends DrupalContext
     {
         // Initialize your context here
     }
-//
-// Place your definition and hook methods here:
-//
-//    /**
-//     * @Given /^I have done something with "([^"]*)"$/
-//     */
-//    public function iHaveDoneSomethingWith($argument)
-//    {
-//        doSomethingWith($argument);
-//    }
-//
+
     /**
-     *@BeforeScenario @javascript,@desktop
+     * @Given /^The screen size is ([0-9]+)x([0-9]+)/
      */
-    public function setBrowserWindowToDesktop() {
-        if($this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver) {
-            $this->getSession()->getDriver()->resizeWindow(1440, 900, 'current');
-        }
-    }
-    /**
-     *@BeforeScenario @javascript&&@tablet&&@portrait
-     */
-    public function setBrowserWindowToTabletPortrait() {
-        if($this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver) {
-            $this->getSession()->getDriver()->resizeWindow(768, 1024, 'current');
-        }
-    }
-    /**
-     *@BeforeScenario @javascript&&@tablet&&@landscape
-     */
-    public function setBrowserWindowToTabletLandscape() {
-        if($this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver) {
-            $this->getSession()->getDriver()->resizeWindow(1024, 768, 'current');
-        }
-    }
-    /**
-     *@BeforeScenario @javascript&&@smartphone&&@landscape
-     */
-    public function setBrowserWindowToSmartphoneLandscape() {
-        if($this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver) {
-            $this->getSession()->getDriver()->resizeWindow(480, 320, 'current');
-        }
-    }
-    /**
-     *@BeforeScenario @smartphone && @portrait
-     */
-    public function setBrowserWindowToSmartphonePortrait() {
-        if($this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver) {
-            $this->getSession()->getDriver()->resizeWindow(320, 480, 'current');
-        }
-    }
-    /**
-     *@BeforeScenario @widescreen
-     */
-    public function setBrowserWindowToWidescreen() {
-        if($this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver) {
-            $this->getSession()->getDriver()->resizeWindow(1920, 1080, 'current');
+    public function setBrowserWindowToDesktop( $width, $height ) {
+        if( $this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver ) {
+            $this->getSession()->getDriver()->resizeWindow( $width, $height, 'current' );
         }
     }
 }

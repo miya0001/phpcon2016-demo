@@ -6,9 +6,9 @@ Feature: WordPress Admin
 
     Then I should see "Welcome to the VCCW"
 
-  @widescreen
   Scenario: Login into the WordPress as admin
-    Given I am on "/wp-admin/"
+    Given The screen size is 1440x900
+    And I am on "/wp-admin/"
 
     When I fill in "user_login" with "admin"
     And I fill in "user_pass" with "admin"
@@ -17,10 +17,9 @@ Feature: WordPress Admin
     Then I should see "Dashboard"
     And I should see "Collapse menu"
 
-  @smartphone
-  @portrait
   Scenario: Login into the WordPress as admin
-    Given I am on "/wp-admin/"
+    Given The screen size is 320x480
+    And I am on "/wp-admin/"
 
     When I fill in "user_login" with "admin"
     And I fill in "user_pass" with "admin"
