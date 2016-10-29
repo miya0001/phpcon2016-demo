@@ -11,13 +11,6 @@ use Behat\MinkExtension\Context\MinkContext,
     Behat\Behat\Event\StepEvent,
     Drupal\DrupalExtension\Context\DrupalContext;
 
-//
-// Require 3rd-party libraries here:
-//
-//   require_once 'PHPUnit/Autoload.php';
-//   require_once 'PHPUnit/Framework/Assert/Functions.php';
-//
-
 /**
  * Features context.
  */
@@ -43,8 +36,8 @@ class FeatureContext extends DrupalContext
 	}
 
 	/**
-	 * @param int $width The cressn width.
-	 * @param int $width The cressn width.
+	 * @param int $width The screen width.
+	 * @param int $height The screen height.
 	 * @Given /^The screen size is ([0-9]+)x([0-9]+)/
 	 */
 	public function set_window_size( $width, $height ) {
