@@ -9,22 +9,18 @@ Feature: WordPress Admin
   Scenario: Showing the toppage with login
 
     Given The screen size is 1440x900
-    And I am on "/wp-login.php"
-    And I fill in "user_login" with "admin"
-    And I fill in "user_pass" with "admin"
-    And I press "wp-submit"
+    And I login as admin with password admin
 
     When I am on "/"
-    And I Wait for the page to be loaded
-    Then I should see "Howdy, admin"
+    Then I should see "Howdy,"
+
+    When I logout
+    Then I should not see "Howdy,"
 
   @javascript
   Scenario: Login into the WordPress as admin with PC
     Given The screen size is 1440x900
-    And I am on "/wp-login.php"
-    And I fill in "user_login" with "admin"
-    And I fill in "user_pass" with "admin"
-    And I press "wp-submit"
+    And I login as admin with password admin
 
     When I am on "/wp-admin/"
     And I Wait for the page to be loaded
@@ -42,10 +38,7 @@ Feature: WordPress Admin
   Scenario: Login into the WordPress as admin with mobile
     Given The screen size is 320x480
     And I am on "/wp-admin/"
-
-    When I fill in "user_login" with "admin"
-    And I fill in "user_pass" with "admin"
-    And I press "wp-submit"
+    And I login as admin with password admin
 
     Then I should see "Dashboard"
     And I should not see "Collapse menu"

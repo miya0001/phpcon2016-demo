@@ -40,9 +40,51 @@ class FeatureContext extends DrupalContext
 	 * @param int $height The screen height.
 	 * @Given /^The screen size is ([0-9]+)x([0-9]+)/
 	 */
-	public function set_window_size( $width, $height ) {
+	public function set_window_size( $width, $height )
+	{
 		if( $this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver ) {
 			$this->getSession()->getDriver()->resizeWindow( $width, $height, 'current' );
+		}
+	}
+
+	/**
+	 * @param string $user The user name.
+	 * @param string $password The password.
+	 * @Given /^I login as ([a-zA-Z0-9_]+) with password ([a-zA-Z0-9_]+)$/
+	 */
+	public function wp_login( $user, $password )
+	{
+		$this->wp_logout();
+
+		$this->getSession()->visit( $this->locatePath( '/wp-login.php' ) );
+		$element = $this->getSession()->getPage();
+		$element->fillField( "user_login", $user );
+		$element->fillField( "user_pass", $password );
+		$submit = $element->findButton( "wp-submit" );
+		if ( empty( $submit ) ) {
+			throw new \Exception( sprintf(
+				"No submit button at %s",
+				$this->getSession()->getCurrentUrl()
+			));
+		}
+
+		$submit->click();
+	}
+
+	/**
+	 * @Given /^I logout$/
+	 */
+	public function wp_logout()
+	{
+		$this->logout_from_wp();
+	}
+
+	private function logout_from_wp()
+	{
+		$page = $this->getSession()->getPage();
+		$logout = $page->find( "css", "#wp-admin-bar-logout a" );
+		if ( ! empty( $logout ) ) {
+			$this->getSession()->visit( $this->locatePath( $logout->getAttribute( "href" ) ) );
 		}
 	}
 }
