@@ -13,6 +13,12 @@ $ npm run init
 $ npm test
 ```
 
+Print all available step definitions.
+
+```
+$ bin/behat -di --lang=en
+```
+
 ## Example
 
 ```
