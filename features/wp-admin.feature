@@ -1,14 +1,27 @@
 Feature: WordPress Admin
 
-  Scenario: Searching for a page that does exist
+  Scenario: Showing the toppage
 
     When I am on "/"
-
     Then I should see "Welcome to the VCCW"
 
-  Scenario: Login into the WordPress as admin
+  @javascript
+  Scenario: Showing the toppage with login
+
     Given The screen size is 1440x900
-    And I am on "/wp-admin/"
+    And I am on "/wp-login.php"
+    And I fill in "user_login" with "admin"
+    And I fill in "user_pass" with "admin"
+    And I press "wp-submit"
+
+    When I am on "/"
+    And I Wait for the page to be loaded
+    Then I should see "Howdy, admin"
+
+  @javascript
+  Scenario: Login into the WordPress as admin with PC
+    Given The screen size is 1440x900
+    And I am on "/wp-login.php"
     And I fill in "user_login" with "admin"
     And I fill in "user_pass" with "admin"
     And I press "wp-submit"
@@ -25,7 +38,8 @@ Feature: WordPress Admin
     When I am on "/wp-admin/customize.php"
     Then I should see "Site Identity"
 
-  Scenario: Login into the WordPress as admin
+  @javascript
+  Scenario: Login into the WordPress as admin with mobile
     Given The screen size is 320x480
     And I am on "/wp-admin/"
 
