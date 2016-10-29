@@ -12,9 +12,11 @@ Feature: WordPress Admin
     And I login as admin with password admin
 
     When I am on "/"
+    And I wait for 3 second
     Then I should see "Howdy,"
 
     When I logout
+    And I wait for 3 second
     Then I should not see "Howdy,"
 
   @javascript
@@ -23,7 +25,7 @@ Feature: WordPress Admin
     And I login as admin with password admin
 
     When I am on "/wp-admin/"
-    And I Wait for the page to be loaded
+    And I wait for 3 second
     Then I should see "Dashboard"
     And I should see "Collapse menu"
 

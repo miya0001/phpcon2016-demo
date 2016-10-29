@@ -1,20 +1,11 @@
 <?php
 
-use Behat\Behat\Context\ClosuredContextInterface,
-    Behat\Behat\Context\TranslatedContextInterface,
-    Behat\Behat\Context\BehatContext,
-    Behat\Behat\Exception\PendingException;
-use Behat\Gherkin\Node\PyStringNode,
-    Behat\Gherkin\Node\TableNode;
-
-use Behat\MinkExtension\Context\MinkContext,
-    Behat\Behat\Event\StepEvent,
-    Drupal\DrupalExtension\Context\DrupalContext;
+use Behat\MinkExtension\Context\RawMinkContext;
 
 /**
  * Features context.
  */
-class FeatureContext extends DrupalContext
+class FeatureContext extends RawMinkContext
 {
 	/**
 	 * Initializes context.
@@ -28,11 +19,11 @@ class FeatureContext extends DrupalContext
 	}
 
 	/**
-	 * @When /^I Wait for the page to be loaded$/
+	 * @When /^I wait for ([0-9]+) second$/
 	 */
-	public function waitForThePageToBeLoaded()
+	public function waitForThePageToBeLoaded( $msec)
 	{
-	    $this->getSession()->wait( 10000, "document.readyState === 'complete'" );
+	    $this->getSession()->wait( $msec * 1000 );
 	}
 
 	/**
