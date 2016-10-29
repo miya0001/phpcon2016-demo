@@ -6,7 +6,7 @@ Feature: WordPress Admin
     And I login as "admin" with password "admin"
 
     When I am on "/wp-admin/"
-    And I wait for 3 second
+    And I wait the "#wpadminbar" element be loaded
     Then I should see "Dashboard"
     And I should see "Collapse menu"
 
@@ -22,14 +22,6 @@ Feature: WordPress Admin
 
     When I am on "/wp-admin/customize.php"
     Then I should see "Site Identity"
-
-    When I am on "/wp-admin/plugin-install.php"
-    And I fill in "s" with "contact-form-7"
-    And I wait for 10 second
-    And I click the "a.install-now" element
-    And I wait for 20 second
-    And I click the "a.activate-now" element
-    Then I should see "Plugin activated."
 
   @javascript
   Scenario: Login into the WordPress as admin with mobile

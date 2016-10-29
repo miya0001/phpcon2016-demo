@@ -12,9 +12,8 @@ Feature: Admin bar
     And I login as "admin" with password "admin"
 
     When I am on "/"
-    And I wait for 3 second
+    And I wait the "#wpadminbar" element be loaded
     Then I should see "Howdy,"
 
     When I logout
-    And I wait for 3 second
     Then I should not see "Howdy,"

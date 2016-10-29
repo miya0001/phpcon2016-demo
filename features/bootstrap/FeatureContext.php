@@ -26,21 +26,46 @@ class FeatureContext extends RawMinkContext
 	public function click_the_element($selector)
 	{
 		$page = $this->getSession()->getPage();
-		$element = $page->find('css', $selector);
+		$element = $page->find( 'css', $selector );
 
 		if (empty($element)) {
-			throw new Exception("No html element found for the selector ('$selector')");
+			throw new Exception( "No html element found for the selector ('$selector')" );
 		}
 
 		$element->click();
 	}
 
 	/**
-	 * @When /^I wait for ([0-9]+) second$/
+	 * @Given /^I wait for ([0-9]+) seconds?$/
 	 */
-	public function wait_for_second( $msec )
+	public function wait_for_second( $sec )
 	{
-		$this->getSession()->wait( $msec * 1000 );
+		$this->getSession()->wait( $sec * 1000 );
+	}
+
+	/**
+	 * @Given /^I wait the "(.*)" element be loaded$/
+	 */
+	public function wait_the_element_be_loaded( $selector )
+	{
+		$wait = 60;
+
+		$page = $this->getSession()->getPage();
+		$element = $page->find( 'css', $selector );
+
+		for ( $i = 0; $i < $wait; $i++ ) {
+			try {
+				if ( $page->find( 'css', $selector ) ) {
+					return true;
+				}
+			} catch ( Exception $e ) {
+				// do nothing
+			}
+
+			sleep( 1 );
+		}
+
+		throw new Exception( "No html element found for the selector ('$selector')" );
 	}
 
 	/**
