@@ -19,11 +19,26 @@ class FeatureContext extends RawMinkContext
 	}
 
 	/**
+	 * @Given I click the :arg1 element
+	 */
+	public function iClickTheElement($selector)
+	{
+		$page = $this->getSession()->getPage();
+		$element = $page->find('css', $selector);
+
+		if (empty($element)) {
+			throw new Exception("No html element found for the selector ('$selector')");
+		}
+
+		$element->click();
+	}
+
+	/**
 	 * @When /^I wait for ([0-9]+) second$/
 	 */
-	public function waitForThePageToBeLoaded( $msec)
+	public function waitForThePageToBeLoaded( $msec )
 	{
-	    $this->getSession()->wait( $msec * 1000 );
+		$this->getSession()->wait( $msec * 1000 );
 	}
 
 	/**
@@ -33,9 +48,7 @@ class FeatureContext extends RawMinkContext
 	 */
 	public function set_window_size( $width, $height )
 	{
-		if( $this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver ) {
-			$this->getSession()->getDriver()->resizeWindow( $width, $height, 'current' );
-		}
+		$this->getSession()->getDriver()->resizeWindow( $width, $height, 'current' );
 	}
 
 	/**
