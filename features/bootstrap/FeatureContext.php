@@ -1,5 +1,7 @@
 <?php
 
+use Behat\Mink\Driver\Selenium2Driver;
+use Behat\Behat\Hook\Scope\AfterStepScope;
 use Behat\MinkExtension\Context\RawMinkContext;
 
 /**
@@ -89,6 +91,20 @@ class FeatureContext extends RawMinkContext
 		$logout = $page->find( "css", "#wp-admin-bar-logout a" );
 		if ( ! empty( $logout ) ) {
 			$this->getSession()->visit( $this->locatePath( $logout->getAttribute( "href" ) ) );
+		}
+	}
+
+	/**
+	 * @AfterStep
+	 */
+	public function takeScreenShotAfterFailedStep(afterStepScope $scope)
+	{
+		if (99 === $scope->getTestResult()->getResultCode()) {
+			$driver = $this->getSession()->getDriver();
+			if (!($driver instanceof Selenium2Driver)) {
+				return;
+			}
+			file_put_contents('/tmp/test.png', $this->getSession()->getDriver()->getScreenshot());
 		}
 	}
 }
