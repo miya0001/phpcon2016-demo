@@ -41,7 +41,7 @@ class FeatureContext extends RawMinkContext
 	/**
 	 * @param string $user The user name.
 	 * @param string $password The password.
-	 * @Given /^I login as ([a-zA-Z0-9_]+) with password ([a-zA-Z0-9_]+)$/
+	 * @Given /^I login as "([a-zA-Z0-9_]+)" with password "([a-zA-Z0-9_]+)"$/
 	 */
 	public function wp_login( $user, $password )
 	{
