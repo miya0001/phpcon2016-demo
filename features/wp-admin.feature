@@ -38,7 +38,8 @@ Feature: WordPress Admin
     And I should see "Debug Bar"
 
   Scenario: Go to the plugin page
-    Given I am on "/wp-admin/customize.php"
+    Given The screen size is 1440x900
+    And I am on "/wp-admin/customize.php"
     And I fill in "user_login" with "admin"
     And I fill in "user_pass" with "admin"
     And I press "wp-submit"

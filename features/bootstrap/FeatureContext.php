@@ -23,23 +23,25 @@ use Behat\MinkExtension\Context\MinkContext,
  */
 class FeatureContext extends DrupalContext
 {
-    /**
-     * Initializes context.
-     * Every scenario gets it's own context object.
-     *
-     * @param array $parameters context parameters (set them up through behat.yml)
-     */
-    public function __construct()
-    {
-        // Initialize your context here
-    }
+	/**
+	 * Initializes context.
+	 * Every scenario gets it's own context object.
+	 *
+	 * @param array $parameters context parameters (set them up through behat.yml)
+	 */
+	public function __construct()
+	{
+		// Initialize your context here
+	}
 
-    /**
-     * @Given /^The screen size is ([0-9]+)x([0-9]+)/
-     */
-    public function setBrowserWindowToDesktop( $width, $height ) {
-        if( $this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver ) {
-            $this->getSession()->getDriver()->resizeWindow( $width, $height, 'current' );
-        }
-    }
+	/**
+	 * @param int $width The cressn width.
+	 * @param int $width The cressn width.
+	 * @Given /^The screen size is ([0-9]+)x([0-9]+)/
+	 */
+	public function set_window_size( $width, $height ) {
+		if( $this->getSession()->getDriver() instanceof \Behat\Mink\Driver\Selenium2Driver ) {
+			$this->getSession()->getDriver()->resizeWindow( $width, $height, 'current' );
+		}
+	}
 }
