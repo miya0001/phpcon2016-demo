@@ -23,6 +23,14 @@ Feature: WordPress Admin
     When I am on "/wp-admin/customize.php"
     Then I should see "Site Identity"
 
+    When I am on "/wp-admin/plugin-install.php"
+    And I fill in "s" with "contact-form-7"
+    And I wait for 10 second
+    And I click the "a.install-now" element
+    And I wait for 20 second
+    And I click the "a.activate-now" element
+    Then I should see "Plugin activated."
+
   @javascript
   Scenario: Login into the WordPress as admin with mobile
     Given The screen size is 320x480

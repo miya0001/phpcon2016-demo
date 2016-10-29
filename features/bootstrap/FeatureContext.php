@@ -23,7 +23,7 @@ class FeatureContext extends RawMinkContext
 	/**
 	 * @Given I click the :arg1 element
 	 */
-	public function iClickTheElement($selector)
+	public function click_the_element($selector)
 	{
 		$page = $this->getSession()->getPage();
 		$element = $page->find('css', $selector);
@@ -38,7 +38,7 @@ class FeatureContext extends RawMinkContext
 	/**
 	 * @When /^I wait for ([0-9]+) second$/
 	 */
-	public function waitForThePageToBeLoaded( $msec )
+	public function wait_for_second( $msec )
 	{
 		$this->getSession()->wait( $msec * 1000 );
 	}
@@ -97,7 +97,7 @@ class FeatureContext extends RawMinkContext
 	/**
 	 * @AfterStep
 	 */
-	public function takeScreenShotAfterFailedStep(afterStepScope $scope)
+	public function take_screenshot_after_fail(afterStepScope $scope)
 	{
 		if (99 === $scope->getTestResult()->getResultCode()) {
 			$driver = $this->getSession()->getDriver();
