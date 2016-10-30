@@ -124,12 +124,14 @@ class FeatureContext extends RawMinkContext
 	 */
 	public function take_screenshot_after_fail(afterStepScope $scope)
 	{
-		if (99 === $scope->getTestResult()->getResultCode()) {
+		if ( 99 === $scope->getTestResult()->getResultCode() ) {
 			$driver = $this->getSession()->getDriver();
-			if (!($driver instanceof Selenium2Driver)) {
+			if ( ! ( $driver instanceof Selenium2Driver ) ) {
 				return;
 			}
-			file_put_contents('/tmp/test.png', $this->getSession()->getDriver()->getScreenshot());
+
+			$image = $this->getSession()->getDriver()->getScreenshot();
+			file_put_contents('/tmp/test.png', $image );
 		}
 	}
 }

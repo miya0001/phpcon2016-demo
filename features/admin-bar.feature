@@ -4,6 +4,7 @@ Feature: Admin bar
 
     When I am on "/"
     Then I should see "Welcome to the VCCW"
+    And I should see "Welcome to the VCCW" in the "h1.site-title" element
 
   @javascript
   Scenario: Showing the Homepage with login
