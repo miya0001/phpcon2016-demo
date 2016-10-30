@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "init": "/usr/bin/env bash init/init.sh",
-    "run-phantomjs": "/usr/bin/env bash init/run-phantomjs.sh",
+    "start-phantomjs": "/usr/bin/env bash init/run-phantomjs.sh",
     "stop-phantomjs": "pgrep phantomjs | xargs kill",
-    "test": "npm run run-phantomjs && sleep 5 && bin/behat && npm run stop-phantomjs"
+    "test": "npm run start-phantomjs && sleep 5 && bin/behat && npm run stop-phantomjs"
   },
   "author": "",
   "license": "MIT",

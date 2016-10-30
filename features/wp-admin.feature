@@ -7,14 +7,13 @@ Feature: WordPress Admin
 
     When I am on "/wp-admin/"
     And I wait the "#wpadminbar" element be loaded
-    Then I should see "Dashboard"
-    And I should see "Collapse menu"
+    Then I should see "Dashboard" in the "#adminmenu" element
 
     When I click the "#collapse-menu" element
-    Then I should not see "Collapse menu"
+    Then I should not see "Dashboard" in the "#adminmenu" element
 
     When I click the "#collapse-menu" element
-    Then I should see "Collapse menu"
+    Then I should see "Dashboard" in the "#adminmenu" element
 
     When I am on "/wp-admin/plugins.php"
     Then I should see "Plugins"
@@ -30,4 +29,3 @@ Feature: WordPress Admin
     And I login as "admin" with password "admin"
 
     Then I should see "Dashboard"
-    And I should not see "Collapse menu"
