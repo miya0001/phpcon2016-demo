@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "da6225b944d5761ae658828c35c2a119",
-    "content-hash": "2b62d244d9d92f9c5e94d7b87d55e9cf",
+    "hash": "845f40d7fb1e9b6789172dd2997da70a",
+    "content-hash": "856fb283424cc729b6c2df7647a668ca",
     "packages": [
         {
             "name": "behat/behat",
-            "version": "v3.2.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Behat.git",
-                "reference": "df7d9225e9ee37fdaa54273e3e0aecf2515bbe76"
+                "reference": "66c36ff224ac9d7508599c40ac2f2773d97ebbaf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Behat/zipball/df7d9225e9ee37fdaa54273e3e0aecf2515bbe76",
-                "reference": "df7d9225e9ee37fdaa54273e3e0aecf2515bbe76",
+                "url": "https://api.github.com/repos/Behat/Behat/zipball/66c36ff224ac9d7508599c40ac2f2773d97ebbaf",
+                "reference": "66c36ff224ac9d7508599c40ac2f2773d97ebbaf",
                 "shasum": ""
             },
             "require": {
@@ -86,7 +86,7 @@
                 "symfony",
                 "testing"
             ],
-            "time": "2016-09-25 09:40:39"
+            "time": "2016-10-30 11:15:37"
         },
         {
             "name": "behat/gherkin",
@@ -94,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Behat/Gherkin.git",
-                "reference": "e0427de89f13d9c69ba203acffc908541ddbc354"
+                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/e0427de89f13d9c69ba203acffc908541ddbc354",
-                "reference": "e0427de89f13d9c69ba203acffc908541ddbc354",
+                "url": "https://api.github.com/repos/Behat/Gherkin/zipball/5c14cff4f955b17d20d088dec1bde61c0539ec74",
+                "reference": "5c14cff4f955b17d20d088dec1bde61c0539ec74",
                 "shasum": ""
             },
             "require": {
@@ -145,7 +145,7 @@
                 "gherkin",
                 "parser"
             ],
-            "time": "2016-09-18 12:15:51"
+            "time": "2016-10-30 11:50:56"
         },
         {
             "name": "behat/mink",
@@ -1601,18 +1601,54 @@
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
             "time": "2016-10-24 18:44:12"
+        },
+        {
+            "name": "vccw-team/wordpress-extension",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/vccw-team/wordpress-extension.git",
+                "reference": "d8e3a9a3f9d4faa34df2833e1c47c11a41623b49"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/vccw-team/wordpress-extension/zipball/d8e3a9a3f9d4faa34df2833e1c47c11a41623b49",
+                "reference": "d8e3a9a3f9d4faa34df2833e1c47c11a41623b49",
+                "shasum": ""
+            },
+            "require": {
+                "behat/behat": "3.*@stable",
+                "behat/mink": "1.6.*@dev",
+                "behat/mink-browserkit-driver": "*@dev",
+                "behat/mink-extension": "2.*@dev",
+                "behat/mink-goutte-driver": "*@dev",
+                "behat/mink-selenium2-driver": "*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "VCCW\\Mink\\WordPressExtension\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Takayuki Miyauchi",
+                    "email": "miya0001@users.noreply.github.com"
+                }
+            ],
+            "description": "WordPress extension for the Behat",
+            "time": "2016-10-31 09:38:34"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "behat/behat": 0,
-        "behat/mink": 20,
-        "behat/mink-extension": 20,
-        "behat/mink-browserkit-driver": 20,
-        "behat/mink-goutte-driver": 20,
-        "behat/mink-selenium2-driver": 20
+        "vccw-team/wordpress-extension": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

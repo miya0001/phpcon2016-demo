@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "init": "/usr/bin/env bash init/init.sh",
-    "start-phantomjs": "/usr/bin/env bash init/run-phantomjs.sh",
-    "stop-phantomjs": "pgrep phantomjs | xargs kill",
-    "test": "npm run start-phantomjs && sleep 5 && bin/behat && npm run stop-phantomjs"
+    "start": "phantomjs --webdriver=4444 --ignore-ssl-errors=yes --cookies-file=/tmp/webdriver_cookie.txt > /tmp/webdriver_output.txt &",
+    "stop": "pgrep phantomjs | xargs kill",
+    "test": "npm start && bin/behat && npm stop"
   },
   "author": "",
   "license": "MIT",
