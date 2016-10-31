@@ -9,7 +9,7 @@ Feature: Admin bar
   @javascript
   Scenario: Showing the Homepage with login
 
-    Given The screen size is 1440x900
+    Given the screen size is 1440x900
     And I login as "admin" with password "admin"
 
     When I am on "/"

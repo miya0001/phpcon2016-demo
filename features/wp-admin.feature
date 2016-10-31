@@ -2,7 +2,7 @@ Feature: WordPress Admin
 
   @javascript
   Scenario: Login into the WordPress as admin with PC
-    Given The screen size is 1440x900
+    Given the screen size is 1440x900
     And I login as "admin" with password "admin"
 
     When I am on "/wp-admin/"
@@ -24,7 +24,7 @@ Feature: WordPress Admin
 
   @javascript
   Scenario: Login into the WordPress as admin with mobile
-    Given The screen size is 320x480
+    Given the screen size is 320x480
     And I am on "/wp-admin/"
     And I login as "admin" with password "admin"
 

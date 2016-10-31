@@ -71,7 +71,7 @@ class FeatureContext extends RawMinkContext
 	/**
 	 * @param int $width The screen width.
 	 * @param int $height The screen height.
-	 * @Given /^The screen size is ([0-9]+)x([0-9]+)/
+	 * @Given /^the screen size is ([0-9]+)x([0-9]+)/
 	 */
 	public function set_window_size( $width, $height )
 	{
@@ -100,6 +100,17 @@ class FeatureContext extends RawMinkContext
 		}
 
 		$submit->click();
+	}
+
+	/**
+	 * @param string $path The path to the screenshot will be saved
+	 * @Given /^I take a screenshot and save to the "(.*)" file$/
+	 */
+	public function take_a_screenshot( $path )
+	{
+		$path = str_replace( "~", posix_getpwuid(posix_geteuid())['dir'], $path );
+		$image = $this->getSession()->getDriver()->getScreenshot();
+		file_put_contents( $path, $image );
 	}
 
 	/**
