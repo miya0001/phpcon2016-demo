@@ -9,8 +9,22 @@ $ npm run init
 
 ## Run Tests
 
+Start PhantomJS.
+
+```
+$ npm start
+```
+
+Run tests.
+
 ```
 $ npm test
+```
+
+Stop PhantomJS.
+
+```
+$ npm stop
 ```
 
 Print all available step definitions.
