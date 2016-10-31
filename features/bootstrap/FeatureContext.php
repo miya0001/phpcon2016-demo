@@ -21,6 +21,23 @@ class FeatureContext extends RawMinkContext
 	}
 
 	/**
+	 * @When /^I hover over the "([^"]*)" element$/
+	 */
+	public function hover_over_the_element( $locator )
+	{
+		$session = $this->getSession();
+		$element = $session->getPage()->find( 'css', $locator );
+
+		if ( null === $element ) {
+			throw new \InvalidArgumentException( sprintf(
+				'Could not evaluate CSS selector: "%s"', $locator
+			) );
+		}
+
+		$element->mouseOver();
+	}
+
+	/**
 	 * @Given I click the :arg1 element
 	 */
 	public function click_the_element($selector)
