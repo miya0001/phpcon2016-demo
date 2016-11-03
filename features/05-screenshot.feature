@@ -1,7 +1,7 @@
-Feature: Mouseover
+Feature: Screenshot
 
   @javascript
-  Scenario: I hover over the specific element
+  Scenario: Take a screenshot
 
     Given the screen size is 1440x900
     And I login as the "administrator" role
