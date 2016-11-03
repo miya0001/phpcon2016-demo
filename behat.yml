@@ -5,11 +5,18 @@ default:
         - %paths.base%/features
       contexts:
         - FeatureContext
-        - Behat\MinkExtension\Context\MinkContext
-        - VCCW\Mink\WordPressExtension\Context
+        - VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext
   extensions:
+    VCCW\Behat\Mink\WordPressExtension:
+      roles:
+        administrator:
+          username: admin
+          password: admin
+        editor:
+          username: editor
+          password: editor
     Behat\MinkExtension:
-      base_url: http://vccw.dev/
+      base_url: http://vccw.dev
       sessions:
         default:
           selenium2:

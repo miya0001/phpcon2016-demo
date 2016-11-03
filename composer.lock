@@ -640,12 +640,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "64862e854f876bc5aee2996cab2f552db8586065"
+                "reference": "5f17a79615bd36d52d3b3ce44075aec02605d8bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/64862e854f876bc5aee2996cab2f552db8586065",
-                "reference": "64862e854f876bc5aee2996cab2f552db8586065",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/5f17a79615bd36d52d3b3ce44075aec02605d8bf",
+                "reference": "5f17a79615bd36d52d3b3ce44075aec02605d8bf",
                 "shasum": ""
             },
             "require": {
@@ -697,7 +697,7 @@
                 "uri",
                 "url"
             ],
-            "time": "2016-08-03 09:33:34"
+            "time": "2016-11-02 14:11:11"
         },
         {
             "name": "instaclick/php-webdriver",
@@ -1202,12 +1202,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "cb1d754b6336ff7a9f522ffaeced8da8b08add71"
+                "reference": "8b35f7f9dd838efc892c09c40b043329949e816f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/cb1d754b6336ff7a9f522ffaeced8da8b08add71",
-                "reference": "cb1d754b6336ff7a9f522ffaeced8da8b08add71",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/8b35f7f9dd838efc892c09c40b043329949e816f",
+                "reference": "8b35f7f9dd838efc892c09c40b043329949e816f",
                 "shasum": ""
             },
             "require": {
@@ -1257,7 +1257,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 15:52:51"
+            "time": "2016-11-02 09:26:25"
         },
         {
             "name": "symfony/dom-crawler",
@@ -1553,12 +1553,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "d2cab32980d8de786744fabdec95991a0ebd7ea8"
+                "reference": "fc738a6cb48d418caee991c634851a7f4d444505"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/d2cab32980d8de786744fabdec95991a0ebd7ea8",
-                "reference": "d2cab32980d8de786744fabdec95991a0ebd7ea8",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/fc738a6cb48d418caee991c634851a7f4d444505",
+                "reference": "fc738a6cb48d418caee991c634851a7f4d444505",
                 "shasum": ""
             },
             "require": {
@@ -1600,7 +1600,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-24 18:44:12"
+            "time": "2016-10-28 07:35:03"
         },
         {
             "name": "vccw-team/wordpress-extension",
@@ -1608,12 +1608,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/vccw-team/wordpress-extension.git",
-                "reference": "d8e3a9a3f9d4faa34df2833e1c47c11a41623b49"
+                "reference": "649fb924e56a30ad00b48e295b25d539930a8c9f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vccw-team/wordpress-extension/zipball/d8e3a9a3f9d4faa34df2833e1c47c11a41623b49",
-                "reference": "d8e3a9a3f9d4faa34df2833e1c47c11a41623b49",
+                "url": "https://api.github.com/repos/vccw-team/wordpress-extension/zipball/649fb924e56a30ad00b48e295b25d539930a8c9f",
+                "reference": "649fb924e56a30ad00b48e295b25d539930a8c9f",
                 "shasum": ""
             },
             "require": {
@@ -1627,7 +1627,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "VCCW\\Mink\\WordPressExtension\\": "src/"
+                    "VCCW\\Behat\\Mink\\WordPressExtension\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1641,7 +1641,7 @@
                 }
             ],
             "description": "WordPress extension for the Behat",
-            "time": "2016-10-31 09:38:34"
+            "time": "2016-11-02 16:07:14"
         }
     ],
     "packages-dev": [],
