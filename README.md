@@ -50,7 +50,7 @@ default:
 
 たとえば Travis CI 等でテストを行いたいときに、上の例のようにパスワードを直接設定ファイルに書く方法はパスワードの漏洩を招いてしまいます。
 
-その場合は以下のように設定を環境変数 `$BEHAT_PARAMS` から取得するようにして、Travis CI で暗号化してください。
+以下のように環境変数 `$BEHAT_PARAMS` から設定を取得するようにして、Travis CI で重要な情報を暗号化することもできます。
 
 https://docs.travis-ci.com/user/encryption-keys/
 
