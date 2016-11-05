@@ -4,7 +4,7 @@
 
 スライドはこちら。
 
-git@github.com:miya0001/phpcon2016-demo.git
+https://speakerdeck.com/miya0001/behatwoshi-tutewordpressfalsegou-cheng-wotesutosuru
 
 ## インストール方法
 
