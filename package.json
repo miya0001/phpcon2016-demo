@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "init": "/usr/bin/env bash init/init.sh",
-    "start": "phantomjs --webdriver=4444 --ignore-ssl-errors=yes --cookies-file=/tmp/webdriver_cookie.txt > /tmp/webdriver_output.txt &",
-    "stop": "pgrep phantomjs | xargs kill",
-    "test": "bin/behat"
+    "test": "/usr/bin/env node init/run-tests.js "
   },
   "author": "",
   "license": "MIT",
