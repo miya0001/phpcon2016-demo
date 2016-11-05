@@ -46,11 +46,11 @@ default:
             wd_host: http://127.0.0.1:4444/wd/hub
 ```
 
-### 設定の暗号化
+### 設定を環境変数から取得する
 
 たとえば Travis CI 等でテストを行いたいときに、上の例のようにパスワードを直接設定ファイルに書く方法はパスワードの漏洩を招いてしまいます。
 
-以下のように環境変数 `$BEHAT_PARAMS` から設定を取得するようにして、Travis CI で重要な情報を暗号化することもできます。
+以下のように環境変数 `$BEHAT_PARAMS` から設定を取得するようにすると安全です。
 
 https://docs.travis-ci.com/user/encryption-keys/
 
