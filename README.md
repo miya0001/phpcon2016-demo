@@ -46,6 +46,64 @@ default:
             wd_host: http://127.0.0.1:4444/wd/hub
 ```
 
+### 設定の暗号化
+
+たとえば Travis CI 等でテストを行いたいときに、上の例のようにパスワードを直接設定ファイルに書く方法はパスワードの漏洩を招いてしまいます。
+
+その場合は以下のように設定を環境変数 `$BEHAT_PARAMS` から取得するようにして、Travis CI で暗号化してください。
+
+https://docs.travis-ci.com/user/encryption-keys/
+
+環境変数 `$BEHAT_PARAMS` の例:
+
+```
+$ echo $BEHAT_PARAMS | jq .
+{
+  "extensions": {
+    "VCCW\\Behat\\Mink\\WordPressExtension": {
+      "roles": {
+        "administrator": {
+          "username": "admin",
+          "password": "admin"
+        }
+      }
+    },
+    "Behat\\MinkExtension": {
+      "base_url": "https://example.com"
+    }
+  }
+}
+```
+
+環境変数で設定を行う際には、`behat.yml` 側の重複する部分を以下のように消してください。
+
+`behat.yml` の例
+
+```
+default:
+  suites:
+    default:
+      paths:
+        - %paths.base%/features
+      contexts:
+        - FeatureContext
+        - VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext
+        - Behat\MinkExtension\Context\MinkContext
+  extensions:
+    VCCW\Behat\Mink\WordPressExtension:
+      roles:
+        administrator:
+          username: admin
+          password: admin
+    Behat\MinkExtension:
+      base_url: http://vccw.dev
+      sessions:
+        default:
+          selenium2:
+            wd_host: http://127.0.0.1:4444/wd/hub
+```
+
+
 ## テストを書く
 
 テスト用のファイルは `features/` ディレクトリ以下に `*.feature` という拡張子で設置する。
