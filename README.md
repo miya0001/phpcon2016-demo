@@ -1,4 +1,10 @@
-# BehatによるWordPressサイトのテスト
+# Behatを使ってWordPressの構成のテストを自動化する
+
+このリポジトリは PHPカンファレンス 2016 で発表した内容のデモのソースです。
+
+スライドはこちら。
+
+git@github.com:miya0001/phpcon2016-demo.git
 
 ## インストール方法
 
