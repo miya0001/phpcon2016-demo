@@ -52,8 +52,6 @@ default:
 
 以下のように環境変数 `$BEHAT_PARAMS` から設定を取得するようにすると安全です。
 
-https://docs.travis-ci.com/user/encryption-keys/
-
 環境変数 `$BEHAT_PARAMS` の例:
 
 ```
