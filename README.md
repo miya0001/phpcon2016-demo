@@ -177,12 +177,6 @@ default | [When|*] /^I hover over the "(?P<selector>[^"]*)" element$/
 
 以下のコマンドを実行してください。
 
-### PhantomJS をバックグラウンドで実行
-
-```
-$ npm start
-```
-
 ### テストを実行
 
 ```
