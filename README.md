@@ -90,13 +90,7 @@ default:
         - VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext
         - Behat\MinkExtension\Context\MinkContext
   extensions:
-    VCCW\Behat\Mink\WordPressExtension:
-      roles:
-        administrator:
-          username: admin
-          password: admin
     Behat\MinkExtension:
-      base_url: http://vccw.dev
       sessions:
         default:
           selenium2:
