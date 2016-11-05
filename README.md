@@ -10,6 +10,7 @@ https://speakerdeck.com/miya0001/behatwoshi-tutewordpressfalsegou-cheng-wotesuto
 
 ```
 $ git clone git@github.com:miya0001/phpcon2016-demo.git
+$ cd phpcon2016-demo
 $ npm install
 $ npm run init
 ```
@@ -50,7 +51,9 @@ default:
 テスト用のファイルは `features/` ディレクトリ以下に `*.feature` という拡張子で設置する。
 複数のファイルがある場合はすべてのファイルが自動的に実行されます。
 
-テストの例:
+### テストの例:
+
+このテストの例では、WordPressにログインして、管理バーが表示されているか？モバイルではテキストが非表示になっているか？などをテストしています。
 
 ```
 Feature: 一般的なテスト
@@ -81,9 +84,40 @@ Feature: 一般的なテスト
     Then I should not see "ダッシュボード" in the "#adminmenu" element
 ```
 
-このテストの例では、WordPressにログインして、管理バーの有無を確認しています。
-
 サンプルとして `example-feature/` ディレクトリ以下にいくつか置いてありますので、そちらも見てください。
+
+### テストの文法
+
+以下のコマンドで Context (文法？)のリストを見ることができます。
+
+```
+$ bin/behat -di --lang=en
+```
+
+出力サンプル:
+
+```
+$ bin/behat -di --lang=en
+default | [Then|*] I should be logged in
+        | Return exception if user haven't logged in
+        | Example: Then I should have logged in
+        | at `VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext::i_have_loggend_in()`
+
+default | [Given|*] /^I login as "(?P<username>(?:[^"]|\\")*)" with password "(?P<password>(?:[^"]|\\")*)"$/
+        | Login with username and password.
+        | Example: Given I login as "admin" width password "admin"
+        | at `VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext::login_as_user_password()`
+
+default | [Given|*] /^I login as the "(?P<role>[a-zA-Z]*)" role$/
+        | Login as the role like "administrator", It should be defined in the `behat.yml`.
+        | Example: Given I login as the "([^"]*)" role
+        | at `VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext::login_as_the_role()`
+
+default | [When|*] /^I hover over the "(?P<selector>[^"]*)" element$/
+        | The mouseover over the specific element.
+        | Example: I hover over the ".site-title a" element
+        | at `VCCW\Behat\Mink\WordPressExtension\Context\WordPressContext::hover_over_the_element()`
+```
 
 ## テストを実行する
 
