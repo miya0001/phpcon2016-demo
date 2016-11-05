@@ -86,6 +86,8 @@ Feature: 一般的なテスト
 
 サンプルとして `example-feature/` ディレクトリ以下にいくつか置いてありますので、そちらも見てください。
 
+https://github.com/miya0001/phpcon2016-demo/tree/master/example-features
+
 ### テストの文法
 
 以下のコマンドで Context (文法？)のリストを見ることができます。
