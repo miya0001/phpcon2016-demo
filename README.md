@@ -145,13 +145,13 @@ https://github.com/miya0001/phpcon2016-demo/tree/master/example-features
 以下のコマンドで Context (文法？)のリストを見ることができます。
 
 ```
-$ bin/behat -di --lang=en
+$ npm test -- -di --lang=en
 ```
 
 出力サンプル:
 
 ```
-$ bin/behat -di --lang=en
+$ npm test -- -di --lang=en
 default | [Then|*] I should be logged in
         | Return exception if user haven't logged in
         | Example: Then I should have logged in
@@ -182,3 +182,17 @@ default | [When|*] /^I hover over the "(?P<selector>[^"]*)" element$/
 ```
 $ npm test
 ```
+
+特定の *.feature だけを実行したい時は以下のようにそのファイル名を指定してください。
+
+```
+$ npm test -- features/sample.feature
+```
+
+Behatのその他のヘルプを見たい時は以下のコマンドを実行してください。
+
+```
+$ npm test -- --help
+```
+
+`npm test` で `behat` にコマンドラインオプションを渡す時は、上述の例のように `--` をつけることに注意してください。
