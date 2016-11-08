@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "/usr/bin/env bash init/init.sh",
-    "test": "/usr/bin/env node init/run-tests.js "
+    "init": "/usr/bin/env bash bin/init.sh",
+    "test": "/usr/bin/env node bin/run-tests.js "
   },
   "author": "",
   "license": "MIT",

@@ -1,8 +1,5 @@
 {
     "require": {
         "vccw-team/wordpress-extension": "dev-stable"
-    },
-    "config": {
-        "bin-dir": "bin/"
     }
 }
